@@ -17,9 +17,9 @@
 #ifndef FLATBUFFERS_DETACHED_BUFFER_H_
 #define FLATBUFFERS_DETACHED_BUFFER_H_
 
-#include "third_party/flatbuffers/include/flatbuffers/allocator.h"
-#include "third_party/flatbuffers/include/flatbuffers/base.h"
-#include "third_party/flatbuffers/include/flatbuffers/default_allocator.h"
+#include "flatbuffers/allocator.h"
+#include "flatbuffers/base.h"
+#include "flatbuffers/default_allocator.h"
 
 namespace flatbuffers {
 
@@ -45,7 +45,7 @@ class DetachedBuffer {
         cur_(cur),
         size_(sz) {}
 
-  DetachedBuffer(DetachedBuffer &&other)
+  DetachedBuffer(DetachedBuffer &&other) noexcept
       : allocator_(other.allocator_),
         own_allocator_(other.own_allocator_),
         buf_(other.buf_),
@@ -55,7 +55,7 @@ class DetachedBuffer {
     other.reset();
   }
 
-  DetachedBuffer &operator=(DetachedBuffer &&other) {
+  DetachedBuffer &operator=(DetachedBuffer &&other) noexcept {
     if (this == &other) return *this;
 
     destroy();

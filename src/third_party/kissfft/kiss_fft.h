@@ -4,8 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-//#include <string.h>
-/* Patched by create_tflm_arduino.py for Arduino compatibility */
+#include <string.h>
 
 #ifdef __cplusplus
 extern "C++" {

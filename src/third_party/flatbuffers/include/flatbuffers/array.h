@@ -17,9 +17,12 @@
 #ifndef FLATBUFFERS_ARRAY_H_
 #define FLATBUFFERS_ARRAY_H_
 
-#include "third_party/flatbuffers/include/flatbuffers/base.h"
-#include "third_party/flatbuffers/include/flatbuffers/stl_emulation.h"
-#include "third_party/flatbuffers/include/flatbuffers/vector.h"
+#include <cstdint>
+#include <memory>
+
+#include "flatbuffers/base.h"
+#include "flatbuffers/stl_emulation.h"
+#include "flatbuffers/vector.h"
 
 namespace flatbuffers {
 
@@ -35,7 +38,7 @@ template<typename T, uint16_t length> class Array {
  public:
   typedef uint16_t size_type;
   typedef typename IndirectHelper<IndirectHelperType>::return_type return_type;
-  typedef VectorIterator<T, return_type> const_iterator;
+  typedef VectorConstIterator<T, return_type, uoffset_t> const_iterator;
   typedef VectorReverseIterator<const_iterator> const_reverse_iterator;
 
   // If T is a LE-scalar or a struct (!scalar_tag::value).
@@ -156,11 +159,13 @@ template<typename T, uint16_t length> class Array {
 
 // Specialization for Array[struct] with access using Offset<void> pointer.
 // This specialization used by idl_gen_text.cpp.
-template<typename T, uint16_t length> class Array<Offset<T>, length> {
+template<typename T, uint16_t length, template<typename> class OffsetT>
+class Array<OffsetT<T>, length> {
   static_assert(flatbuffers::is_same<T, void>::value, "unexpected type T");
 
  public:
   typedef const void *return_type;
+  typedef uint16_t size_type;
 
   const uint8_t *Data() const { return data_; }
 
@@ -236,6 +241,14 @@ template<typename E, typename T, uint16_t length>
 const Array<E, length> &CastToArrayOfEnum(const T (&arr)[length]) {
   static_assert(sizeof(E) == sizeof(T), "invalid enum type E");
   return *reinterpret_cast<const Array<E, length> *>(arr);
+}
+
+template<typename T, uint16_t length>
+bool operator==(const Array<T, length> &lhs,
+                const Array<T, length> &rhs) noexcept {
+  return std::addressof(lhs) == std::addressof(rhs) ||
+         (lhs.size() == rhs.size() &&
+          std::memcmp(lhs.Data(), rhs.Data(), rhs.size() * sizeof(T)) == 0);
 }
 
 }  // namespace flatbuffers
