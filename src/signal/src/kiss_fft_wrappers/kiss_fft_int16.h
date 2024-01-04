@@ -22,8 +22,8 @@ limitations under the License.
 // (16/32 bit integer, float, double) without getting a linker error.
 #define FIXED_POINT 16
 namespace kiss_fft_fixed16 {
-#include "kiss_fft.h"
-#include "tools/kiss_fftr.h"
+#include "third_party/kissfft/kiss_fft.h"
+#include "third_party/kissfft/tools/kiss_fftr.h"
 }  // namespace kiss_fft_fixed16
 #undef FIXED_POINT
 
