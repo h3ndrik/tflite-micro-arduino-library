@@ -58,6 +58,6 @@ rm -rf "${TEMP_DIR}"
 # find . -type f -exec sed -i 's/#include "flatbuffers\//#include "third_party\/flatbuffers\/include\/flatbuffers\//' {} \;
 # find . -type f -exec sed -i 's/#include "ruy\//#include "third_party\/ruy\/ruy\//' {} \;
 # find . -type f -exec sed -i 's/#include "fixedpoint\//#include "third_party\/gemmlowp\/fixedpoint\//' {} \;
-# find . -type f -exec sed -i 's/#include "tools\/kiss/#include "third_party\/kissfft\/tools\/kiss/' {} \;
-# find . -type f -exec sed -i 's/#include "kiss_fft/#include "third_party\/kissfft\/kiss_fft/' {} \;
-# except tools/kiss_fftr.c
+# find . -type f -exec sed -i 's/#include "tools\/kiss_fftr\.h"/#include "third_party\/kissfft\/tools\/kiss_fftr\.h"/' {} \;
+# find . -type f -exec sed -i 's/#include "tools\/kiss_fft\.h"/#include "third_party\/kissfft\/kiss_fft\.h"/' {} \;
+# find . -type f -exec sed -i 's/#include "_kiss_fft_guts\.h"/#include "third_party\/kissfft\/_kiss_fft_guts\.h"/' {} \;
