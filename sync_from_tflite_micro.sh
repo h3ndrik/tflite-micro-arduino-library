@@ -60,3 +60,4 @@ rm -rf "${TEMP_DIR}"
 # find . -type f -exec sed -i 's/#include "fixedpoint\//#include "third_party\/gemmlowp\/fixedpoint\//' {} \;
 # find . -type f -exec sed -i 's/#include "tools\/kiss/#include "third_party\/kissfft\/tools\/kiss/' {} \;
 # find . -type f -exec sed -i 's/#include "kiss_fft/#include "third_party\/kissfft\/kiss_fft/' {} \;
+# except tools/kiss_fftr.c
