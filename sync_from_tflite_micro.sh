@@ -54,3 +54,9 @@ mkdir -p signal/
 /bin/cp -r "${TEMP_DIR}"/tflm-out/signal/* signal/
 
 rm -rf "${TEMP_DIR}"
+
+# find . -type f -exec sed -i 's/#include "flatbuffers\//#include "third_party\/flatbuffers\/include\/flatbuffers\//' {} \;
+# find . -type f -exec sed -i 's/#include "ruy\//#include "third_party\/ruy\/ruy\//' {} \;
+# find . -type f -exec sed -i 's/#include "fixedpoint\//#include "third_party\/gemmlowp\/fixedpoint\//' {} \;
+# find . -type f -exec sed -i 's/#include "tools\/kiss/#include "third_party\/kissfft\/tools\/kiss/' {} \;
+# find . -type f -exec sed -i 's/#include "kiss_fft/#include "third_party\/kissfft\/kiss_fft/' {} \;
