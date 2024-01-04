@@ -20,9 +20,9 @@
 #include <cstdint>
 #include <memory>
 
-#include "flatbuffers/base.h"
-#include "flatbuffers/stl_emulation.h"
-#include "flatbuffers/vector.h"
+#include "third_party/flatbuffers/include/flatbuffers/base.h"
+#include "third_party/flatbuffers/include/flatbuffers/stl_emulation.h"
+#include "third_party/flatbuffers/include/flatbuffers/vector.h"
 
 namespace flatbuffers {
 

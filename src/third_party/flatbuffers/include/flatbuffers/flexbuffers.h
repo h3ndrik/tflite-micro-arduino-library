@@ -20,9 +20,9 @@
 #include <algorithm>
 #include <map>
 // Used to select STL variant.
-#include "flatbuffers/base.h"
+#include "third_party/flatbuffers/include/flatbuffers/base.h"
 // We use the basic binary writing functions from the regular FlatBuffers.
-#include "flatbuffers/util.h"
+#include "third_party/flatbuffers/include/flatbuffers/util.h"
 
 #ifdef _MSC_VER
 #  include <intrin.h>

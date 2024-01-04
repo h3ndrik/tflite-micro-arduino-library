@@ -19,7 +19,7 @@
 
 // Helper functionality to glue FlatBuffers and GRPC.
 
-#include "flatbuffers/flatbuffers.h"
+#include "third_party/flatbuffers/include/flatbuffers/flatbuffers.h"
 #include "grpcpp/support/byte_buffer.h"
 #include "grpcpp/support/slice.h"
 

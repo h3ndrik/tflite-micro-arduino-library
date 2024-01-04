@@ -20,8 +20,8 @@
 #include <ctype.h>
 #include <errno.h>
 
-#include "flatbuffers/base.h"
-#include "flatbuffers/stl_emulation.h"
+#include "third_party/flatbuffers/include/flatbuffers/base.h"
+#include "third_party/flatbuffers/include/flatbuffers/stl_emulation.h"
 
 // For TFLM we always want to use FLATBUFFERS_PREFER_PRINTF=1. See
 // http://b/211811553 for more context.

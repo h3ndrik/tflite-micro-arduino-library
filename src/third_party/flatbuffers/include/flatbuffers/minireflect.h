@@ -17,8 +17,8 @@
 #ifndef FLATBUFFERS_MINIREFLECT_H_
 #define FLATBUFFERS_MINIREFLECT_H_
 
-#include "flatbuffers/flatbuffers.h"
-#include "flatbuffers/util.h"
+#include "third_party/flatbuffers/include/flatbuffers/flatbuffers.h"
+#include "third_party/flatbuffers/include/flatbuffers/util.h"
 
 namespace flatbuffers {
 

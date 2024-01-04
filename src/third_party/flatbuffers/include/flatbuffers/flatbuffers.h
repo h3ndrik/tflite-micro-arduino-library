@@ -21,19 +21,19 @@
 
 // TODO: These includes are for mitigating the pains of users editing their
 // source because they relied on flatbuffers.h to include everything for them.
-#include "flatbuffers/array.h"
-#include "flatbuffers/base.h"
-#include "flatbuffers/buffer.h"
-#include "flatbuffers/buffer_ref.h"
-#include "flatbuffers/detached_buffer.h"
-#include "flatbuffers/flatbuffer_builder.h"
-#include "flatbuffers/stl_emulation.h"
-#include "flatbuffers/string.h"
-#include "flatbuffers/struct.h"
-#include "flatbuffers/table.h"
-#include "flatbuffers/vector.h"
-#include "flatbuffers/vector_downward.h"
-#include "flatbuffers/verifier.h"
+#include "third_party/flatbuffers/include/flatbuffers/array.h"
+#include "third_party/flatbuffers/include/flatbuffers/base.h"
+#include "third_party/flatbuffers/include/flatbuffers/buffer.h"
+#include "third_party/flatbuffers/include/flatbuffers/buffer_ref.h"
+#include "third_party/flatbuffers/include/flatbuffers/detached_buffer.h"
+#include "third_party/flatbuffers/include/flatbuffers/flatbuffer_builder.h"
+#include "third_party/flatbuffers/include/flatbuffers/stl_emulation.h"
+#include "third_party/flatbuffers/include/flatbuffers/string.h"
+#include "third_party/flatbuffers/include/flatbuffers/struct.h"
+#include "third_party/flatbuffers/include/flatbuffers/table.h"
+#include "third_party/flatbuffers/include/flatbuffers/vector.h"
+#include "third_party/flatbuffers/include/flatbuffers/vector_downward.h"
+#include "third_party/flatbuffers/include/flatbuffers/verifier.h"
 
 namespace flatbuffers {
 

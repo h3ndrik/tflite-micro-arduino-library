@@ -17,8 +17,8 @@
 #ifndef FLATBUFFERS_DEFAULT_ALLOCATOR_H_
 #define FLATBUFFERS_DEFAULT_ALLOCATOR_H_
 
-#include "flatbuffers/allocator.h"
-#include "flatbuffers/base.h"
+#include "third_party/flatbuffers/include/flatbuffers/allocator.h"
+#include "third_party/flatbuffers/include/flatbuffers/base.h"
 
 namespace flatbuffers {
 
